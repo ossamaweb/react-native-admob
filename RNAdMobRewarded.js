@@ -60,7 +60,7 @@ const removeAllListeners = () => {
   DeviceEventEmitter.removeAllListeners('rewardedVideoWillLeaveApplication');
 };
 
-const tryShowNewInterstitial = (testID) => {
+const tryShowNewReward = (testID) => {
   console.warn(`tryShowNewInterstitial method is deprecated and will be removed in the next major release, please use requestAd() and showAd() directly.\n\nExample: AdMobInterstitial.requestAd(AdMobInterstitial.showAd)`);
   if (testID) {
     RNAdMobRewarded.setTestDeviceID(testID);
@@ -79,7 +79,7 @@ module.exports = {
   ...RNAdMobRewarded,
   requestAd: (cb = () => {}) => RNAdMobRewarded.requestAd(cb), // requestAd callback is optional
   showAd: (cb = () => {}) => RNAdMobRewarded.showAd(cb),       // showAd callback is optional
-  tryShowNewInterstitial,
+  tryShowNewReward,
   addEventListener,
   removeEventListener,
   removeAllListeners,
